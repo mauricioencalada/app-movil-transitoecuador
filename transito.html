@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        
+        function parImpar()
+        {
+            var mes=parseInt(document.getElementById("mes").value)
+            var valor=parseInt(document.getElementById("valor").value);
+            var tipo=(valor%2)?"Impar":"Par";
+            document.getElementById("placa").innerHTML="Su numero de placa "+valor+" es "+tipo;
+            var mes=parseInt(document.getElementById("mes").value)
+            if(mes == 1 ){
+                document.getElementById("dias").innerHTML="EL mes es impar por lo tanto los dias que puede circular son LUNES, MIERCOLES,VIERNES Y DOMINGO ";
+            return false;
+            }
+            if(mes ==2){
+                document.getElementById("dias").innerHTML="El mes es par por lo tanto los dias que puede circular son MARTES, JUEVES,SABADO Y DOMINGO ";
+            return false;
+            }
+        }
+        </script>
+<title>App transito</title>
+</head>
+<body>
+
+    <div data-role="page">
+
+        <div data-role="header">
+            <h1>Circulacion Vehicular</h1>
+        </div>
+        <div data-role="content">
+
+            
+<p>Ingrese solo el numero de placa:<input type="number" id="valor" value="" placeholder="ej:9876 "></p>
+
+<label for="mes">Ingrese el mes:</label>
+
+<select name="mes" id="mes">
+  <option value="1">Enero</option>
+  <option value="2">Febrero</option>
+  <option value="1">Marzo</option>
+  <option value="2">Abril</option>
+  <option value="1">Mayo</option>
+  <option value="2">Junio</option>
+  <option value="1">Julio</option>
+  <option value="2">Agosto</option>
+  <option value="1">Septiembre</option>
+  <option value="2">Octubre</option>
+  <option value="1">Noviembre</option>
+  <option value="2">Diciembre</option>
+  </select>
+
+
+  
+  <button class="ui-btn" onclick="return parImpar()" value="Par/Impar" >Buscar</button>
+  <input type="reset" value="Limpiar (:">
+  <div id="placa"></div>    
+  <div id="dias"></div>    
+      
+</div>
+        
+        
+
+
+        <div data-role="footer">
+
+
+        </div>
+    </div>
+
+</body>
+</html>
